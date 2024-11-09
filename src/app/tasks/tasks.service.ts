@@ -26,9 +26,39 @@ export class TasksService {
             userId: userId,
             title: taskData.title,
             summary: taskData.summary,
-            dueDate: taskData.date
+            dueDate: taskData.date,
+            priority: taskData.priority,
+            category: taskData.category,
           });
-          this.saveTasks();
+    }
+
+    submitTask(taskData: NewTaskData, taskId: string, userId: string) {
+        // If there is a taskId we're updating an existing one
+        if (taskId) {
+            this.updateTask(taskData, taskId);
+        }
+        else {
+            this.addTask(taskData, userId);
+        }
+        
+        this.saveTasks();
+    }
+
+    updateTask(taskData: NewTaskData, taskId: string) {
+        const taskIndex = this.tasks.findIndex((task) => task.id === taskId);
+        const task = this.tasks[taskIndex];
+        this.tasks[taskIndex] = {
+            id: task.id,
+            userId: task.userId,
+            title: taskData.title,
+            summary: taskData.summary,
+            dueDate: taskData.date,
+            priority: taskData.priority,
+            category: taskData.category,
+        };
+    }
+    getTask(id: string) {
+        return this.tasks.find((task) => task.id === id);
     }
 
     removeTask(id: string) {

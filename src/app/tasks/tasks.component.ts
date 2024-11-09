@@ -14,7 +14,9 @@ import { TasksService } from './tasks.service';
 export class TasksComponent {
   @Input({required: true}) userId!: string;
   @Input({required: true}) name!: string;
+  taskId!: string;
   isAddingTask = false;
+  isEditingTask = false;
 
   constructor(private tasksService: TasksService) {}
                                     // Dependency Injection 
@@ -28,8 +30,13 @@ export class TasksComponent {
   onAddingTask() {
     this.isAddingTask = true;
   }
+  onEditingTask(taskId: string) {
+    this.taskId = taskId;
+    this.isEditingTask = true;
+  }
   onCloseAddingTask() {
     this.isAddingTask = false;
+    this.isEditingTask = false;
   }
 
 }

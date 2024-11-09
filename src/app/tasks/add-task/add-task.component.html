@@ -1,7 +1,7 @@
 <div class="backdrop" (click)="onCancel()"></div>>
 <dialog open>
     <h2>Add Task</h2>
-    <form (ngSubmit)="onSubmitNewTask()">  <!-- (ngSubmit) its necessary to) -->
+    <form (ngSubmit)="onSubmitTask()">  <!-- (ngSubmit) its necessary to) -->
         <p>
             <label for="title">Title</label>
             <input type="text" id="title" name="title" [(ngModel)]="enteredTitle" required>
@@ -18,7 +18,9 @@
             <label for="priority">Priority</label>
             <select id="priority" name="priority" [(ngModel)]="prioritySelected">
                 @for (priority of priorities; track $index) {
-                    <option value="priority">{{priority}}</option>
+                    <option [value]="priority">{{priority}}</option>
+                            <!--Necessary to put [value] to the priority
+                             option be attributed to prioritySelected property-->
                 }
             </select>
         </p>
@@ -31,7 +33,7 @@
         </p>
         <p class="actions">
             <button type="button" (click)="onCancel()"> Cancel</button>
-            <button type="submit">Create</button>
+            <button type="submit">{{ taskId ? "Save": "Create" }}</button>
         </p>
     </form>
 </dialog>

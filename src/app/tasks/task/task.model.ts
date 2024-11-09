@@ -4,6 +4,8 @@ export interface Task {
     title: string;
     summary: string;
     dueDate: string;
+    priority: string;
+    category: string;
   }
 
 export interface NewTaskData {

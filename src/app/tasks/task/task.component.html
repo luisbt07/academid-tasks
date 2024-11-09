@@ -4,7 +4,12 @@
         <time>{{task.dueDate | date: "fullDate"}}</time>
                             <!-- DatePipe can be configured: https://angular.dev/api/common/DatePipe-->
         <p>{{task.summary}}</p>
+        <p>{{task.category}}</p>
+        <p>{{task.priority}}</p>
+
         <p class="actions">
+            <button type="button" (click)="onEditTask()">Editar</button>
+            
             <button (click)="onCompleteTask()">Complete</button>
         </p>
     </article>
