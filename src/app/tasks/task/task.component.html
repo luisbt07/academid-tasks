@@ -3,9 +3,19 @@
         <h2>{{task.title}}</h2>
         <time>{{task.dueDate | date: "fullDate"}}</time>
                             <!-- DatePipe can be configured: https://angular.dev/api/common/DatePipe-->
-        <p>{{task.summary}}</p>
-        <p>{{task.category}}</p>
-        <p>{{task.priority}}</p>
+        <p>
+            <span class="formProps">Description: </span>
+            <span class="pContent">{{task.summary}}</span>
+        </p>
+
+        <p>
+            <span class="formProps">Category: </span>
+            <span class="pContent">{{task.category}}</span>
+        </p>
+        <p>
+            <span class="formProps">Priority: </span>
+            <span class="pContent">{{task.priority}}</span>
+        </p>
 
         <p class="actions">
             <button type="button" (click)="onEditTask()">Editar</button>

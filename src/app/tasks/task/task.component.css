@@ -37,3 +37,20 @@ article {
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
   }
   
+.formProps {
+    font-weight: bold;
+    color: #3c2c50; /* Darker color to distinguish labels */
+    margin-right: 0.25rem; /* Adds space between label and content */
+}
+
+.pContent {
+    color: #25113d; /* Matches text color */
+    font-style: italic; /* Adds a bit of emphasis */
+}
+
+/* Additional style for the paragraphs containing labels and content */
+article p {
+    display: flex; /* Aligns label and content horizontally */
+    align-items: baseline; /* Aligns text with the label */
+    margin: 0.5rem 0; /* Adds some vertical spacing between paragraphs */
+}
