@@ -1,4 +1,6 @@
 # User task Management
+I created this task-management "system" following the Angular Acadmid course, adding some little new functionalities and styling on my own accordingly to my Front-end auto-instructional work requirements.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
 
